@@ -1,5 +1,6 @@
-import { Table, TableField } from './../lib/classes/Table.class';
+
 import * as sqlite3 from 'sqlite3';
+import { Table, TableField } from './Table.class';
 export class DB  {
      db = new sqlite3.Database('./lib/db/mydb.db3');  
  

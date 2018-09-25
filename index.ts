@@ -1,5 +1,6 @@
 import { DB } from './sqlite-web/db';
-import { Table } from './lib/classes/Table.class';
+import { Table } from './sqlite-web/Table.class';
+
 let db : DB;
 db = new DB();
 let table = new Table("table_teste",[
