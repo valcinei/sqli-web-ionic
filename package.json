@@ -1,0 +1,35 @@
+{
+  "name": "sqlite-web-ionic",
+  "version": "1.0.0",
+  "description": "Run Sqlite in ionic serve",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valcinei/sqlite-web-ionic.git"
+  },
+  "keywords": [
+    "ionic",
+    "sqlite",
+    "db",
+    "browser"
+  ],
+  "author": "Valcinei Silva",
+  "license": "ISC",
+  "files": [
+    "lib"
+  ],
+  "bugs": {
+    "url": "https://github.com/valcinei/sqlite-web-ionic/issues"
+  },
+  "homepage": "https://github.com/valcinei/sqlite-web-ionic#readme",
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/sqlite3": "^3.1.3"
+  }
+}
