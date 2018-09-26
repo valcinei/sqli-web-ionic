@@ -1,5 +1,6 @@
-import { DB } from './sqlite-web/db';
-import { Table } from './sqlite-web/Table.class';
+import { DB } from "./sqlite-web/db";
+import { Table } from "./sqlite-web/Table.class";
+
 
 let db : DB;
 db = new DB();
