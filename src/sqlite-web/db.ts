@@ -1,11 +1,11 @@
 
 import * as sqlite3 from 'sqlite3';
 import * as fs from 'fs';
-import { Table, TableField } from './Table.class';
+import { TableField, Table } from '../classes/Table.class';
 export class DB  {
      db :sqlite3.Database;  
      constructor(){
-       this.db = new sqlite3.Database('./lib/db/mydb.db3');  
+       this.db = new sqlite3.Database('./dist/db/mydb.db3');  
      }
  
     public createDataBase(path:string, dbName:string) {

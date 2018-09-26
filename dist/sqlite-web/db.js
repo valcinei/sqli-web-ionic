@@ -11,7 +11,7 @@ var sqlite3 = __importStar(require("sqlite3"));
 var fs = __importStar(require("fs"));
 var DB = /** @class */ (function () {
     function DB() {
-        this.db = new sqlite3.Database('./lib/db/mydb.db3');
+        this.db = new sqlite3.Database('./dist/db/mydb.db3');
     }
     DB.prototype.createDataBase = function (path, dbName) {
         console.log(path + "/" + dbName);
