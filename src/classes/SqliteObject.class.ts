@@ -1,7 +1,7 @@
 export interface DbTransaction {
     executeSql: (sql: any, values?: any[], success?: Function, error?: Function) => void;
 }
-
+clearImmediate
 export interface SQLiteTransaction extends DbTransaction {
     start: () => void;
     addStatement: DbTransaction['executeSql'];

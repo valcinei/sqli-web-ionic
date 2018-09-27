@@ -1,56 +1,17 @@
 
-import * as sqlite3 from 'sqlite3';
 import * as fs from 'fs';
-import { TableField, Table } from '../classes/Table.class';
+import { Table } from '../classes/Table.class';
 export class DB  {
-     db :sqlite3.Database;  
-     constructor(){
-       this.db = new sqlite3.Database('./dist/db/mydb.db3');  
-     }
- 
-    public createDataBase(path:string, dbName:string) {
-        console.log(`${path}/${dbName}`);
-        if(!(fs.existsSync(path))){
-            fs.mkdirSync(path);
-        }
-        try{
-            this.db = new sqlite3.Database(`${path}/${dbName}.db3`)
-        }catch(e){
-            console.error("Error to create db",e);
-        }
-    }
-
-    public queryExecute(query:string) {
-        try{
-           return this.db.serialize(()=> this.db.run(query))
-        }catch(e){
-            console.error("Query error",e);
-        }
-    }
-
-    public select() {
-
+    public db: any;
     
-        this.db.serialize(() => {
-            this.db.each(`SELECT * FROM table_teste`, (err, row) => {
-              if (err) {
-                console.error(err.message);
-              }
-              console.log(row.name + "\t" + row.last_name);
-            });
-          });
-
-
+    constructor(){ 
+    this.connectDB("teste","1.0","asdadsa",2*1024*1024);  
     }
-
-
-    public createTable(table: Table) {
-        let fields = '';
-        table.fields.forEach((el:TableField)=>{
-            fields += `${el.name.toLocaleLowerCase()} ${el.type.toLocaleUpperCase()} ,`;
-        })
-        fields = fields.slice(0,-1);
-        this.queryExecute(`CREATE TABLE IF NOT EXISTS ${table.name} (${fields})`);
+    public connectDB(name:string, version:string,info:string,size:number) {
+        
+        // @ts-ignore: Unreachable code error
+        this.db = openDatabase(name,version,info,size);
     }
+   
 }
 
