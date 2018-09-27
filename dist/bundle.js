@@ -78,11 +78,11 @@ __webpack_require__(1);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var db_1 = __webpack_require__(2);
-var Table_class_1 = __webpack_require__(3);
-var db;
+const db_1 = __webpack_require__(2);
+const Table_class_1 = __webpack_require__(3);
+let db;
 db = new db_1.DB();
-var table = new Table_class_1.Table("table_teste", [
+let table = new Table_class_1.Table("table_teste", [
     { name: 'name', type: 'text' },
     { name: 'last_name', type: 'text' }
 ]);
@@ -95,16 +95,15 @@ var table = new Table_class_1.Table("table_teste", [
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var DB = /** @class */ (function () {
-    function DB() {
+class DB {
+    constructor() {
         this.connectDB("teste", "1.0", "asdadsa", 2 * 1024 * 1024);
     }
-    DB.prototype.connectDB = function (name, version, info, size) {
+    connectDB(name, version, info, size) {
         // @ts-ignore: Unreachable code error
         this.db = openDatabase(name, version, info, size);
-    };
-    return DB;
-}());
+    }
+}
 exports.DB = DB;
 
 
@@ -115,21 +114,19 @@ exports.DB = DB;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Table = /** @class */ (function () {
-    function Table(name, fields) {
+class Table {
+    constructor(name, fields) {
         this.name = name;
         this.fields = fields;
     }
-    return Table;
-}());
+}
 exports.Table = Table;
-var TableField = /** @class */ (function () {
-    function TableField(name, type) {
+class TableField {
+    constructor(name, type) {
         this.name = name;
         this.type = type;
     }
-    return TableField;
-}());
+}
 exports.TableField = TableField;
 
 
