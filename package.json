@@ -1,8 +1,8 @@
 {
-  "name": "sqlite-web-ionic",
+  "name": "sqlite-web-ionic1",
   "version": "1.0.0",
   "description": "Run Sqlite in ionic serve",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "node dist/index.js",
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/valcinei/sqlite-web-ionic#readme",
   "dependencies": {
+    "sqlite-web-ionic": "file:dist",
     "sqlite3": "^4.0.2",
     "window": "^4.2.5"
   },

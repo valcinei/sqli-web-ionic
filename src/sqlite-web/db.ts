@@ -1,4 +1,3 @@
-
 import * as fs from 'fs';
 import { Table } from '../classes/Table.class';
 export class DB  {
