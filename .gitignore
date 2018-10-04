@@ -1,5 +1,5 @@
 .vscode/
 node_modules/
 lib/
+!dist/package.json
 dist/
-!*dist/package.json
